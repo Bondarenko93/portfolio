@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@100;400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@100;400&display=swap');
+@layer base {
+    html {
+        font-family: Fira Code, system-ui, sans-serif;
+    }
+}
+
+
+
 
 body {
     background-color: #010C15;
@@ -17,8 +26,60 @@ body {
     overflow: hidden;
 }
 
-@layer base {
-    html {
-        font-family: Fira Code, system-ui, sans-serif;
-    }
+
+/* header menu*/
+
+.header_menu * {
+    box-sizing: border-box;
+  }
+  .header_menu li {
+    display: inline-block;
+    list-style: outside none none;
+  }
+  .header_menu .botton_line,
+  .header_menu a {
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+  .header_menu .botton_line:before,
+  .header_menu a:after {
+    position: absolute;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+  }
+  .header_menu .botton_line:before {
+    bottom: 0;
+    display: block;
+    height: 3px;
+    width: 0%;
+    content: "";
+    background-color: #FEA55F;
+  }
+  .header_menu a:after {
+    left: 0;
+    top: 0;
+    padding: 0.5em 0;
+    position: absolute;
+    content: attr(data-hover);
+    color: #ffffff;
+    white-space: nowrap;
+    max-width: 0%;
+    overflow: hidden;
+    padding-top: 1rem;
+  }
+  .header_menu .botton_line:hover:before,
+  .header_menu .active_li .botton_line:before {
+    opacity: 1;
+    width: 100%;
+  }
+  .header_menu a:hover:after,
+  .header_menu .active_li a:after {
+    max-width: 100%;
+  }
+ 
+  .active_li a {
+    color: white;
 }
+/* end header menu*/
