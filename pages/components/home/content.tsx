@@ -1,5 +1,10 @@
-import { Game } from "../../../game/Game"
+import dynamic from 'next/dynamic'
+
 import { BackgroundSvg } from "../svg/background-svg"
+
+const Game = dynamic(() => import('../../../game/Game'), {
+    ssr: false,
+})
 
 export const Content = () => {
     return (
