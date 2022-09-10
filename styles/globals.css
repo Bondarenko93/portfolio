@@ -83,3 +83,7 @@ body {
     color: white;
 }
 /* end header menu*/
+
+.svg svg {
+  width: 100%;
+}
