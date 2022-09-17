@@ -2,10 +2,6 @@ import dynamic from 'next/dynamic'
 
 import { BackgroundSvg } from "../svg/background-svg"
 
-const Game = dynamic(() => import('../../../game/Game'), {
-    ssr: false,
-})
-
 export const Content = () => {
     return (
         <div className='flex max-w-6xl w-full m-auto  px-6 h-full justify-between items-center'>
@@ -27,7 +23,6 @@ export const Content = () => {
                     <BackgroundSvg />
                 </div>
             </div>
-            <Game />
         </div>
     )
 }

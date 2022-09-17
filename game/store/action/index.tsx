@@ -17,13 +17,13 @@ export const STOP_GAME = "STOP_GAME";
 export const INCREASE_SNAKE = "INCREASE_SNAKE";
 export const INCREMENT_SCORE = "INCREMENT_SCORE";
 export const RESET_SCORE = "RESET_SCORE";
- 
-export const makeMove = (dx, dy, move) => ({
+
+export const makeMove = (dx: number, dy: number, move: string) => ({
   type: move,
   payload: [dx, dy]
 });
 
-export const setDisDirection = (direction) => ({
+export const setDisDirection = (direction: string) => ({
   type: SET_DIS_DIRECTION,
   payload: direction
 });
@@ -40,6 +40,6 @@ export const increaseSnake = () => ({
   type: INCREASE_SNAKE
 });
 
-export const scoreUpdates = (type) => ({
-  type
+export const scoreUpdates = (type: string) => ({
+  type: type
 });

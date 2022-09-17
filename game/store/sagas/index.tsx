@@ -4,24 +4,26 @@ import {
   takeLatest
 } from "redux-saga/effects";
 import {
+  UP,
   DOWN,
   LEFT,
+  RIGHT,
   RESET,
   STOP_GAME,
   MOVE_DOWN,
   MOVE_LEFT,
   MOVE_RIGHT,
-  MOVE_UP, RIGHT,
-  setDisDirection, UP
+  MOVE_UP, 
+  setDisDirection
 } from "../action";
 
-export function* moveSaga(params) {
-
+export function* moveSaga(params: { type: string; payload: any; }) {
   while (params.type !== RESET && params.type !== STOP_GAME) {
     yield put({
       type: params.type.split("_")[1],
       payload: params.payload,
     });
+    console.log(params.type.split("_")[1]);
     switch (params.type.split("_")[1]) {
       case RIGHT:
         yield put(setDisDirection(LEFT));
@@ -38,8 +40,6 @@ export function* moveSaga(params) {
       case DOWN:
         yield put(setDisDirection(UP));
         break;
-
-      // do nothing
     }
 
     yield delay(100);

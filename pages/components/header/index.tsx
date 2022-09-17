@@ -1,24 +1,35 @@
 // import { MobileMenu } from "../../menu/mobileMenu";
 import { useState } from "react";
+import { useRouter } from 'next/router'
 import { Contact, HeaderContainer, LogoStyle, NavUl } from "./header.style";
 export const Header = () => {
 
     let MenuList = ['_hello', '_about-me', '_codebase'];
     const [toggle, setToggle] = useState(false)
-
+    const router = useRouter();
     function showHideMenu(status: boolean) {
         document.getElementById('mobile-menu').classList.toggle('hidden');
         setToggle(status);
     }
 
     function Menu({ MenuList }: any['']) {
+        let route = router.pathname;
+        let url = '';
         return MenuList.map((val: string, key: number) => {
-            let active = key === 0 ? "active_li" : ""
+            if (route === '/') {
+                route = MenuList[0];
+            }
+            if (val === MenuList[0]) {
+                url = '/';
+            } else {
+                url = val;
+            }
+            let active = route.lastIndexOf(val) > -1 ? "active_li" : "";
             let data_hover = key === 0 ? "" : val
             return (
                 <li className={"text-[#607B96] text-base text-center " + active} key={key}>
                     <div className="botton_line" >
-                        <a data-hover={data_hover} className="inline-block py-4" href="##">{val}</a>
+                        <a data-hover={data_hover} className="inline-block py-4" href={url}>{val}</a>
                     </div>
                 </li>
             );

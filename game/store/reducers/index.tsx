@@ -28,7 +28,7 @@ export const GlobalState = {
 };
 
 
-export const gameReducer = (state = GlobalState, action) => {
+export const gameReducer = (state = GlobalState, action: { type: any; payload: number[]; }) => {
     switch (action.type) {
         case RIGHT:
         case LEFT:

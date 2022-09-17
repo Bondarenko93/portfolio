@@ -1,7 +1,12 @@
 import { useRef, useState, useCallback, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { ArrowButton } from "./button/arrow"
-import { increaseSnake, scoreUpdates, INCREMENT_SCORE, stopGame, makeMove, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT, MOVE_UP } from "../game/store/action";
+import {
+    increaseSnake, scoreUpdates,
+    INCREMENT_SCORE, stopGame,
+    makeMove, MOVE_DOWN,
+    MOVE_LEFT, MOVE_RIGHT, MOVE_UP
+} from "../game/store/action";
 import { GlobalState } from '../game/store/reducers';
 import { Stage, Layer, Group, Rect } from 'react-konva';
 import { GenerateRandomPosition } from "./canvas/config";
@@ -24,7 +29,7 @@ const Game = ({ height = 384, width = 240 }) => {
 
 
     const moveSnake = useCallback(
-        (dx = 0, dy = 0, ds) => {
+        (dx = 0, dy = 0, ds: string) => {
             if (dx > 0 && dy === 0 && ds !== "RIGHT") {
                 dispatch(makeMove(dx, dy, MOVE_RIGHT));
             }
@@ -48,7 +53,7 @@ const Game = ({ height = 384, width = 240 }) => {
 
 
     const handleKeyEvents = useCallback(
-        (event) => {
+        (event: { code: string; preventDefault: () => void; }) => {
             if (disallowedDirection) {
                 switch (event.code) {
                     case "KeyW":
@@ -103,7 +108,7 @@ const Game = ({ height = 384, width = 240 }) => {
             window.removeEventListener("keypress", handleKeyEvents);
 
         } else {
-            snake1.forEach((element, index) => {
+            snake1.forEach((element: { x: number; y: number; }, index: string | number) => {
                 if (element.x > width) {
                     snake1[index].x = 0;
                 }
@@ -119,7 +124,7 @@ const Game = ({ height = 384, width = 240 }) => {
             })
             setGameEnded(false);
         }
-    }, [pos, snake1, height, width, dispatch, handleKeyEvents]);
+    }, [pos, snake1, height, width, dispatch, handleKeyEvents, isConsumed]);
 
     const buttonStart = () => {
         setStartGame(true);
@@ -140,7 +145,8 @@ const Game = ({ height = 384, width = 240 }) => {
 
 
     const renderSnake = () => {
-        return snake1.map((snake, index) => {
+        console.log(snake1);
+        return snake1.map((snake: { x: number | undefined; y: number | undefined; }, index: number) => {
             let color = 'rgba(67, 217, 173, 1)';
             let radius = [0, 0, 0, 0];
             if (index === 0) {
