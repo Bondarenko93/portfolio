@@ -84,6 +84,19 @@ body {
 }
 /* end header menu*/
 
+/**/
+
+.fa-arrow-down svg{
+  transform: rotate(0deg);
+  transition: transform 1s linear;
+}
+
+.fa-arrow-down.open svg{
+  transform: rotate(90deg);
+  transition: transform 1s linear;
+}
+
+/**/
 .svg svg {
   width: 100%;
 }
