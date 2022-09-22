@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from 'next/router'
 import { Contact, HeaderContainer, LogoStyle, NavUl } from "./header.style";
+import Link from "next/link";
 export const Header = () => {
 
     let MenuList = ['_hello', '_about-me', '_codebase'];
@@ -29,7 +30,9 @@ export const Header = () => {
             return (
                 <li className={"text-[#607B96] text-base text-center " + active} key={key}>
                     <div className="botton_line" >
-                        <a data-hover={data_hover} className="inline-block py-4" href={url}>{val}</a>
+                        <Link href={url}>
+                            <a data-hover={data_hover} className="inline-block py-4">{val}</a>
+                        </Link>
                     </div>
                 </li>
             );
