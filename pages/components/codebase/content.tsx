@@ -27,7 +27,7 @@ export const Content = () => {
 
     return (
         <>
-            <div className='flex max-w-6xl w-full    h-full '>
+            <div className='flex w-full    h-full '>
                 <Sidebar>
                     <ul className="w-full">
                         <li className={'fa-arrow-down ' + active}>
@@ -43,7 +43,7 @@ export const Content = () => {
                         </li>
                     </ul>
                 </Sidebar>
-                <div>
+                <div className="flex  w-full justify-around flex-wrap mt-8">
 
                     {[...Array(3)].map((_, index) => (
                         <Card key={index} />
