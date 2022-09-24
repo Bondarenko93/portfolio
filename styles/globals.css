@@ -207,6 +207,23 @@ svg g[filter="url(#filter1_f_56_2416)"] path {
 
 /**/
 
+/**/
+
+.style_block {
+  counter-reset: num;
+}
+
+.style_block li:before {
+  content: counter(num);
+  margin-right: 16px;
+  counter-increment: num;
+  width: 20px;
+  text-align: end;
+  display: inline-block;
+  color: #607B96;
+}
+
+/**/
 
 @keyframes color {
   0% {
