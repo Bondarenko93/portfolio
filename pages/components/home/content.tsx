@@ -17,7 +17,7 @@ export const Content = () => {
                 <div className='flex flex-col items-left'>
                     <p className='text-[#607B96] mb-2'>{'//'} complete the game to continue</p>
                     <p className='text-[#607B96] mb-4'>{'//'} find my profile on Github:</p>
-                    <p><span className='text-[#4D5BCE]'>const</span> <span className='text-[#43D9AD]' >githubLink</span> <span className='text-white'>=</span> <span className='text-[#E99287]'><a href='##'>“https://github.com/bondarenko93”</a></span></p>
+                    <p><span className='text-[#4D5BCE]'>const</span> <span className='text-[#43D9AD]' >githubLink</span> <span className='text-white'>=</span> <span className='text-[#E99287]'><a href='https://github.com/bondarenko93'>“https://github.com/bondarenko93”</a></span></p>
                 </div>
                 <div className="hidden md:flex w-full">
                     <BackgroundSvg />

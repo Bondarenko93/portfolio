@@ -14,4 +14,4 @@ export const Layout = ({ children }) => {
     )
 }
 
-const Container = tw.div`lg:bg-[#0116276c] relative flex flex-col justify-between h-[96vh] md:h-[95vh] m-3 md:m-4  border-color border rounded-lg`
+const Container = tw.div`lg:bg-[#0116276c] relative flex flex-col justify-between h-[96vh] md:h-[95vh] m-3 md:m-4  border-color border rounded-lg  overflow-hidden`

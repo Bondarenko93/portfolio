@@ -5,93 +5,101 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-        font-family: Fira Code, system-ui, sans-serif;
-    }
+  html {
+    font-family: Fira Code, system-ui, sans-serif;
+  }
 }
 
 
 
 
 body {
-    background-color: #010C15;
+  background-color: #010C15;
 }
 
 .border-color {
-    border-color: #1E2D3D;
+  border-color: #1E2D3D;
 }
 
 #root {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 
 /* header menu*/
 
 .header_menu * {
-    box-sizing: border-box;
-  }
-  .header_menu li {
-    display: inline-block;
-    list-style: outside none none;
-  }
-  .header_menu .botton_line,
-  .header_menu a {
-    color: rgba(255, 255, 255, 0.5);
-    position: relative;
-    letter-spacing: 1px;
-    text-decoration: none;
-  }
-  .header_menu .botton_line:before,
-  .header_menu a:after {
-    position: absolute;
-    -webkit-transition: all 0.35s ease;
-    transition: all 0.35s ease;
-  }
-  .header_menu .botton_line:before {
-    bottom: 0;
-    display: block;
-    height: 3px;
-    width: 0%;
-    content: "";
-    background-color: #FEA55F;
-  }
-  .header_menu a:after {
-    left: 0;
-    top: 0;
-    padding: 0.5em 0;
-    position: absolute;
-    content: attr(data-hover);
-    color: #ffffff;
-    white-space: nowrap;
-    max-width: 0%;
-    overflow: hidden;
-    padding-top: 1rem;
-  }
-  .header_menu .botton_line:hover:before,
-  .header_menu .active_li .botton_line:before {
-    opacity: 1;
-    width: 100%;
-  }
-  .header_menu a:hover:after,
-  .header_menu .active_li a:after {
-    max-width: 100%;
-  }
- 
-  .active_li a {
-    color: white;
+  box-sizing: border-box;
 }
+
+.header_menu li {
+  display: inline-block;
+  list-style: outside none none;
+}
+
+.header_menu .botton_line,
+.header_menu a {
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.header_menu .botton_line:before,
+.header_menu a:after {
+  position: absolute;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.header_menu .botton_line:before {
+  bottom: 0;
+  display: block;
+  height: 3px;
+  width: 0%;
+  content: "";
+  background-color: #FEA55F;
+}
+
+.header_menu a:after {
+  left: 0;
+  top: 0;
+  padding: 0.5em 0;
+  position: absolute;
+  content: attr(data-hover);
+  color: #ffffff;
+  white-space: nowrap;
+  max-width: 0%;
+  overflow: hidden;
+  padding-top: 1rem;
+}
+
+.header_menu .botton_line:hover:before,
+.header_menu .active_li .botton_line:before {
+  opacity: 1;
+  width: 100%;
+}
+
+.header_menu a:hover:after,
+.header_menu .active_li a:after {
+  max-width: 100%;
+}
+
+.active_li a {
+  color: white;
+}
+
 /* end header menu*/
 
 /**/
 
-.fa-arrow-down svg{
+.fa-arrow-down svg {
   transform: rotate(0deg);
   transition: transform 1s linear;
 }
 
-.fa-arrow-down.open svg{
+.fa-arrow-down.open svg {
   transform: rotate(90deg);
   transition: transform 1s linear;
 }
@@ -103,95 +111,128 @@ body {
 
 svg g[filter="url(#filter0_f_64_1234)"] path,
 svg g[filter="url(#filter0_f_56_2416)"] path {
-    fill: rgb(77, 91, 206);
-    animation-name: color;
-    animation-duration: 7s;
-    animation-iteration-count: infinite;
+  fill: rgb(77, 91, 206);
+  animation-name: color;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
 }
 
 svg g[filter="url(#filter1_f_64_1234)"] path,
 svg g[filter="url(#filter1_f_56_2416)"] path {
-    fill: rgb(67, 217, 173);
-    animation-name: color1;
-    animation-duration: 7s;
-    animation-iteration-count: infinite;
+  fill: rgb(67, 217, 173);
+  animation-name: color1;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
 }
 
 .part.left:first-child {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .part.right:first-child {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
+
 .part.up:first-child {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
+
 .part.down:first-child {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
+
 .part {
-    background: #009688;
-    width: 10px;
-    height: 10px;
-    border-radius: 0px;
-    position: absolute;
+  background: #009688;
+  width: 10px;
+  height: 10px;
+  border-radius: 0px;
+  position: absolute;
 }
 
 .food {
-    width: 10px;
-    height: 10px;
-    background: #009688;
-    border-radius: 50%;
-    position: absolute;
-    transition: 0.05s;
+  width: 10px;
+  height: 10px;
+  background: #009688;
+  border-radius: 50%;
+  position: absolute;
+  transition: 0.05s;
 }
 
 .game {
-    background: linear-gradient(150.26deg, rgba(23, 85, 83, 0.7) 1.7%, rgba(67, 217, 173, 0.091) 81.82%);
-    border: 1px solid #0C1616;
-    box-shadow: inset 0px 2px 0px rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(64px);
-    border-radius: 8px;
+  background: linear-gradient(150.26deg, rgba(23, 85, 83, 0.7) 1.7%, rgba(67, 217, 173, 0.091) 81.82%);
+  border: 1px solid #0C1616;
+  box-shadow: inset 0px 2px 0px rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(64px);
+  border-radius: 8px;
 }
 
 .arrow {
-    background: #010C15;
-    border: 1px solid #1E2D3D;
-    border-radius: 8px;
+  background: #010C15;
+  border: 1px solid #1E2D3D;
+  border-radius: 8px;
 }
 
+@media (min-width: 768px) {
+
+  /**/
+  /* width */
+  ::-webkit-scrollbar {
+    width: 26px;
+
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #607B96;
+
+
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #1E2D3D;
+
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+
+  }
+}
+
+/**/
 
 
 @keyframes color {
   0% {
-      fill: rgb(77, 91, 206);
+    fill: rgb(77, 91, 206);
   }
 
   50% {
-      fill: rgb(67, 217, 173);
+    fill: rgb(67, 217, 173);
   }
 
   100% {
-      fill: rgb(77, 91, 206);
+    fill: rgb(77, 91, 206);
   }
 }
 
 @keyframes color1 {
   0% {
-      fill: rgb(67, 217, 173);
+    fill: rgb(67, 217, 173);
 
   }
 
   50% {
-      fill: rgb(77, 91, 206);
+    fill: rgb(77, 91, 206);
   }
 
   100% {
-      fill: rgb(67, 217, 173);
+    fill: rgb(67, 217, 173);
   }
 }
