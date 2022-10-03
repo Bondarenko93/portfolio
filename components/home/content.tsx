@@ -1,6 +1,5 @@
 import React from "react"
  
-
 import { BackgroundSvg } from "../svg/background-svg"
 
 export const Content = () => {

@@ -11,12 +11,14 @@ export const Layout = ({ children }: any) => {
     if (route === '/') {
         background = 'lg:bg-[#01162700]';
     }
-    //@ts-ignore
-    <Container className={background}><Header /> {children} <Footer />
-        <div className='block absolute  svg top-0 w-full -z-50 '>
-            <BackgroundMobile />
-        </div>
-    </Container>
+    return (
+        //@ts-ignore
+        <Container className={background}><Header /> {children} <Footer />
+            <div className='block absolute  svg top-0 w-full -z-50 '>
+                <BackgroundMobile />
+            </div>
+        </Container>
+    )
 }
 
 const Container = tw.div` relative flex flex-col justify-between h-[96vh] md:h-[95vh] m-3 md:m-4  border-color border rounded-lg  overflow-hidden`
