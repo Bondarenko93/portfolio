@@ -20,7 +20,6 @@ export const Content = () => {
     let active = isActive ? "open" : "";
     let activeUl = isActive ? "hidden" : "showmenu";
 
-
     return (
         //@ts-ignore
 
@@ -35,7 +34,6 @@ export const Content = () => {
                             </>
                         </ul>
                     </XyzTransitionGroup>
-
                 </li>
             </ul>
         </Sidebar>
